@@ -15,7 +15,7 @@ class S3Storage:
     def upload_file(self,file_obj,filename):
         try:
             self.s3.upload_fileobj(file_obj, self.bucket, filename)
-            retrun True
+            return True
         except ClientError as e:
             print(f"Error uploading file: {e}")
             return False
